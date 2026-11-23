@@ -1,767 +1,1070 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>PrtFolio - Fahmi Ayatullah</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahmi Ayatullah, S.Ag — Jurnalis, Penggiat Teater & Sastrawan</title>
+    <meta name="description" content="Portofolio resmi Fahmi Ayatullah, S.Ag. Peneliti Sejarah, Jurnalis Naratif, Penulis Naskah Teater, dan Penata Letak Grafis. Menganyam riset, panggung, dan sastra.">
+    <meta name="keywords" content="Fahmi Ayatullah, Jurnalis, Teater, Sastrawan, Naskah Monolog, Filsafat Islam, Desain Grafis, Riset Budaya, Banyuwangi, Surabaya">
+    <meta name="author" content="Fahmi Ayatullah">
 
-        <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+    <!-- Open Graph / Meta -->
+    <meta property="og:title" content="Fahmi Ayatullah, S.Ag — Jurnalis, Penggiat Teater & Sastrawan">
+    <meta property="og:description" content="Arsip karya, naskah panggung, liputan investigatif, dan dialektika pemikiran Fahmi Ayatullah.">
+    <meta property="og:type" content="website">
 
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Editorial Serif + Avant-Garde Sans + Monospace -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
+    <!-- Custom Modern Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="dark">
 
-    <body data-spy="scroll" data-target=".navbar" data-offset="51">
-        <!-- Nav Bar Start -->
-        <div class="navbar navbar-expand-lg bg-light navbar-light">
-            <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">PrtFolio</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
+    <!-- Ambient Theatrical Grain & Spotlight Canvas -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+    <div class="spotlight-glow" id="spotlightGlow" aria-hidden="true"></div>
+    <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container" aria-hidden="true">
+        <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="masthead-nav" id="mainHeader">
+        <div class="nav-container">
+            <a href="#hero" class="brand-signature">
+                <span class="brand-crest"><i class="fa-solid fa-feather-pointed"></i></span>
+                <div class="brand-details">
+                    <span class="brand-name">FAHMI AYATULLAH</span>
+                    <span class="brand-tag">S.Ag • Jurnalis & Sastrawan</span>
+                </div>
+            </a>
+
+            <nav class="desktop-menu" aria-label="Navigasi Utama">
+                <a href="#hero" class="nav-link active"><span class="nav-num">01</span>Prolog</a>
+                <a href="#persona" class="nav-link"><span class="nav-num">02</span>Trinitas Karya</a>
+                <a href="#experience" class="nav-link"><span class="nav-num">03</span>Kronik Jejak</a>
+                <a href="#archive" class="nav-link"><span class="nav-num">04</span>Koleksi Karya</a>
+                <a href="#monolog" class="nav-link"><span class="nav-num">05</span>Panggung Teater</a>
+                <a href="#essays" class="nav-link"><span class="nav-num">06</span>Wacana & Esai</a>
+                <a href="#contact" class="nav-link"><span class="nav-num">07</span>Dialog</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="https://wa.me/6282213297661?text=Halo%20Fahmi%20Ayatullah,%20saya%20tertarik%20berdiskusi%20dan%20berkolaborasi." target="_blank" rel="noopener noreferrer" class="btn-theatre btn-nav-cta">
+                    <span class="btn-dot"></span>
+                    <span>Kolaborasi</span>
+                </a>
+                <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Buka Menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </button>
+            </div>
+        </div>
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto">
-                        <a href="#home" class="nav-item nav-link active">Home</a>
-                        <a href="#about" class="nav-item nav-link">About</a>
-                        <a href="#service" class="nav-item nav-link">Keterampilan</a>
-                        <a href="#experience" class="nav-item nav-link">Resume</a>
-                        <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                        <a href="#price" class="nav-item nav-link">Nilai Utama</a>
-                        <a href="#review" class="nav-item nav-link">Review</a>
-                        <a href="#team" class="nav-item nav-link">Team</a>
-                        <a href="#blog" class="nav-item nav-link">Blog</a>
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
+        <!-- Mobile Drawer Menu -->
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="drawer-content">
+                <div class="drawer-header">
+                    <span class="drawer-title">KATALOG NAVIGASI</span>
+                    <button class="drawer-close" id="drawerCloseBtn" aria-label="Tutup Menu">&times;</button>
+                </div>
+                <div class="drawer-links">
+                    <a href="#hero" class="drawer-link"><span class="d-num">I.</span> Prolog / Halaman Utama</a>
+                    <a href="#persona" class="drawer-link"><span class="d-num">II.</span> Trinitas Peran</a>
+                    <a href="#experience" class="drawer-link"><span class="d-num">III.</span> Kronik Rekam Jejak</a>
+                    <a href="#archive" class="drawer-link"><span class="d-num">IV.</span> Portofolio & Kearsipan</a>
+                    <a href="#monolog" class="drawer-link"><span class="d-num">V.</span> Naskah Monolog & Teater</a>
+                    <a href="#essays" class="drawer-link"><span class="d-num">VI.</span> Wacana & Esai Sastra</a>
+                    <a href="#mentors" class="drawer-link"><span class="d-num">VII.</span> Resonansi & Pengakuan</a>
+                    <a href="#contact" class="drawer-link"><span class="d-num">VIII.</span> Ruang Temu & Kontak</a>
+                </div>
+                <div class="drawer-footer">
+                    <p class="drawer-quote">"Kata yang dirawat adalah panggung yang tak pernah usai."</p>
+                    <div class="drawer-socials">
+                        <a href="https://www.instagram.com/fahmiayatollahh" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/6282213297661" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:fahmiayatollah@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Nav Bar End -->
+    </header>
 
+    <main id="mainContent">
 
-        <!-- Hero Start -->
-        <div class="hero" id="home">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="hero-content">
-                            <div class="hero-text">
-                                <p>saya</p>
-                                <h1>Fahmi Ayatullah S.Ag</h1>
-                                <h2></h2>
-                                <div class="typed-text">Bachelor of Islamic Theology and Philosophy | Historical Researcher | Lay Out Designer.</div>
+        <!-- HERO SECTION: Theatrical Broadsheet Aesthetic -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <!-- Broadsheet Meta Bar -->
+                <div class="broadsheet-header">
+                    <div class="broadsheet-tag">
+                        <span class="live-pulse"></span>
+                        <span>ARSIP KARYA & MANIFESTO VISUAL</span>
+                    </div>
+                    <div class="broadsheet-coords">
+                        <span>BANYUWANGI — SURABAYA, ID</span>
+                        <span class="sep">•</span>
+                        <span>VOL. XXIV / TAHUN AKTIF 2026</span>
+                    </div>
+                </div>
+
+                <div class="hero-grid">
+                    <!-- Left: Narrative & Typography -->
+                    <div class="hero-narrative">
+                        <div class="role-badge">
+                            <span class="badge-icon"><i class="fa-solid fa-masks-theater"></i></span>
+                            <span class="badge-text">JURNALIS • PENGGIAT TEATER • SASTRAWAN</span>
+                        </div>
+
+                        <h1 class="hero-headline">
+                            Menelisik Realitas, <br>
+                            <span class="serif-italic-accent">Menggubah Panggung,</span> <br>
+                            Merawat Kata.
+                        </h1>
+
+                        <p class="hero-subtext">
+                            Saya <strong>Fahmi Ayatullah, S.Ag</strong> — seorang penjelajah wacana, jurnalis naratif, dan penulis naskah teater. Bergerak di persilangan riset sejarah, kerja-kerja jurnalistik berkedalaman, monolog panggung, hingga tata letak media independen. Menolak keseragaman narasi, menghidupkan ruang dialog di tengah masyarakat.
+                        </p>
+
+                        <!-- Key Stats / Manifestos -->
+                        <div class="hero-manifesto-grid">
+                            <div class="manifesto-card">
+                                <span class="card-kicker">01 / JURNALISTIK</span>
+                                <p class="card-desc">Laporan investigasi dan narasi berbasis riset lapangan empiris.</p>
                             </div>
-                            <div class="hero-btn">
-                                <a class="btn" href="https://www.instagram.com/fahmiayatollahh?igsh=MXRpNW1obDB4cjl4Ng==">Hire Me</a>
-                                <a class="btn" href="https://wa.me/6282213297661">Contact Me</a>
+                            <div class="manifesto-card">
+                                <span class="card-kicker">02 / DRAMATURGI</span>
+                                <p class="card-desc">Menyusun monolog & lakon teater yang menggugat kesadaran.</p>
+                            </div>
+                            <div class="manifesto-card">
+                                <span class="card-kicker">03 / FILSAFAT & SASTRA</span>
+                                <p class="card-desc">Esai kritis ekologis, dialektika pemikiran, & sastra pesisir.</p>
+                            </div>
+                        </div>
+
+                        <!-- CTA Group -->
+                        <div class="hero-cta-group">
+                            <a href="#archive" class="btn-theatre btn-primary-theatre">
+                                <span>Katalog Karya & Arsip</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                            <a href="#monolog" class="btn-theatre btn-secondary-theatre">
+                                <i class="fa-solid fa-play"></i>
+                                <span>Eksplorasi Naskah Monolog</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Abstract Theatrical Portrait Frame (No Superman!) -->
+                    <div class="hero-visual">
+                        <div class="theatrical-frame">
+                            <!-- Geometric Abstract Borders -->
+                            <div class="frame-corner top-left"></div>
+                            <div class="frame-corner top-right"></div>
+                            <div class="frame-corner bottom-left"></div>
+                            <div class="frame-corner bottom-right"></div>
+
+                            <!-- Rotating Typographic Seal -->
+                            <div class="curved-badge-container">
+                                <svg viewBox="0 0 100 100" class="rotating-text-svg">
+                                    <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+                                    <text>
+                                        <textPath xlink:href="#circlePath">
+                                            FAHMI AYATULLAH • DOSIR KARYA • BANYUWANGI • SURABAYA •
+                                        </textPath>
+                                    </text>
+                                </svg>
+                                <div class="badge-center-icon"><i class="fa-solid fa-scroll"></i></div>
+                            </div>
+
+                            <!-- Portrait Image with Ambient Chiaroscuro Lighting -->
+                            <div class="portrait-stage">
+                                <div class="stage-curtain-glow"></div>
+                                <img src="assets/profile.png" alt="Fahmi Ayatullah S.Ag" class="portrait-img" onerror="this.onerror=null; this.src='assets/avatar.jpg';">
+                                
+                                <!-- Abstract Graphic Grid Overlay -->
+                                <div class="abstract-grid-lines">
+                                    <span class="grid-line horizontal"></span>
+                                    <span class="grid-line vertical"></span>
+                                    <div class="stage-tag">BABAK I: MANIFESTO</div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Editorial Stamp -->
+                            <div class="theatrical-stamp">
+                                <span class="stamp-title">DIALEKTIKA & SASTRA</span>
+                                <span class="stamp-sub">"Kata Bukan Sekadar Tanda, Melainkan Ruang Berpijak"</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-6 d-none d-md-block">
-                        <div class="hero-image">
-                            <img src="img/hero.png" alt="Hero Image">
+                </div>
+
+                <!-- Live Ticker Bar -->
+                <div class="theatrical-ticker">
+                    <div class="ticker-label"><i class="fa-solid fa-compass"></i> JEJAK FOKUS :</div>
+                    <div class="ticker-track">
+                        <div class="ticker-content">
+                            <span>LENTERA BIRU PRESS</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>MONOLOG & DRAMATURGI</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>DARAS FILSAFAT MUNCAR</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>RISET EKOLOGI BUDAYA</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>SASTRA MARITIM & PETIK LAUT</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>TATA LETAK BUKU & INDESIGN</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>KADERISASI KRITIS & LITERASI MEDIA</span>
+                            <span class="ticker-bullet">✦</span>
+                        </div>
+                        <div class="ticker-content" aria-hidden="true">
+                            <span>LENTERA BIRU PRESS</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>MONOLOG & DRAMATURGI</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>DARAS FILSAFAT MUNCAR</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>RISET EKOLOGI BUDAYA</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>SASTRA MARITIM & PETIK LAUT</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>TATA LETAK BUKU & INDESIGN</span>
+                            <span class="ticker-bullet">✦</span>
+                            <span>KADERISASI KRITIS & LITERASI MEDIA</span>
+                            <span class="ticker-bullet">✦</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Hero End -->
+        </section>
 
-
-        <!-- About Start -->
-        <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
-            <div class="container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-img">
-                            <img src="img/about.jpg" alt="Image">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="about-content">
-                            <div class="section-header text-left">
-                                <p>Tentang Saya :</p>
-                                <h2>Saya memiliki pengalaman selama 3 tahun di bidang desain grafis dan PSDM.</h2>
-                            </div>
-                            <div class="about-text">
-                                <p>
-                                   Seorang kurator dan evaluator program yang berpengalaman dalam merancang, menjalankan, dan mengevaluasi berbagai kegiatan. Terbiasa menyusun konsep acara secara sistematis, menentukan alur kerja yang efisien, serta memastikan setiap tahap kegiatan berjalan sesuai dengan tujuan yang telah ditetapkan. Proses evaluasi dilakukan melalui pengumpulan umpan balik, analisis hasil pelaksanaan, dan penyusunan catatan perbaikan. Memegang prinsip bahwa program yang baik adalah program yang direncanakan secara rapi, dijalankan dengan kesungguhan, dan dievaluasi secara jujur demi perbaikan dan keberlanjutan
-                                </p>
-                            </div>
-                            <div class="skills">
-                                <div class="skill-name">
-                                    <p>Web Design</p><p>85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>Web Development</p><p>95%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>Fotografi</p><p>90%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>lay Out Book</p><p>85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <a class="btn" href="">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- About End -->
-        
-        
-        <!-- Service Start -->
-        <div class="service" id="service">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Keterampilan</p>
-                    <h2>KOMPETENSI</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fa fa-laptop"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Desain & Produksi Media</h3>
-                                <p>
-                                    Menguasai perangkat lunak desain seperti InDesign, Photoshop, dan Premiere Pro untuk kebutuhan publikasi dan dokumentasi visual.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fa fa-laptop-code"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Fasilitator & Trainer</h3>
-                                <p>
-                                    Berpengalaman dalam menyusun dan memberikan pelatihan literasi media, dan pengembangan komunitas pesantren.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fab fa-android"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Manajemen Komunitas</h3>
-                                <p>
-                                    Memfasilitasi ruang interaksi sosial di komunitas, membangun diskusi publik, dan merawat relasi antar anggota secara partisipatif.
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fab fa-apple"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Kurator & Evaluator Program</h3>
-                                <p>
-                                    Merancang konsep kegiatan, mengawal implementasi, serta mengevaluasi efektivitas program berbasis komunitas dan edukasi.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Service End -->
-        
-        
-         <!-- Experience Start -->
-        <div class="experience" id="experience">
-            <div class="container">
-                <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>My Resume</p>
-                    <h2>Working Experience</h2>
-                </header>
-                <div class="timeline">
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2021 - 2022</div>
-                            <h2>Staf Riset dan Media</h2>
-                            <h4>Gramatika Foundation, Surabaya</h4>
-                            <p>
-                                Bertugas menyusun dan memonitori materi pelatihan jurnalistik dan literasi media.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2022 - 2023</div>
-                            <h2>Journalist</h2>
-                            <h4>Lentera Biru Press, Surabaya</h4>
-                            <p>
-                                Meliput berita dan menulis laporan mendalam berbasis riset lapangan, serta menjadi bagian dari tim editorial dan kurasi konten.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2023 - Sekarang</div>
-                            <h2>Script Writer</h2>
-                            <h4>Freelance - Produksi Lokal</h4>
-                            <p>
-                                Menulis dan menyusun naskah untuk video edukatif dan konten kreatif, termasuk pengembangan alur, dialog, dan narasi visual yang selaras dengan pesan inti.
-
-
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2022</div>
-                            <h2>Screening Commite</h2>
-                            <h4>PMII Rayon Ushuluddin dan Filsafat</h4>
-                            <p>
-                               Menyusun modul kajian pengkaderan dan mengevaluasi dinamika diskusi peserta sebagai dasar pengembangan kurikulum kaderisasi
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2023</div>
-                            <h2>Koordinator Divisi Pengabdian Masyarakat</h2>
-                            <h4>Program Mitigasi Bencana, Pasuruan, Indonesia</h4>
-                            <p>
-                                Merancang program edukatif mitigasi bencana dan mengorganisasi kegiatan sosialisasi kepada masyarakat desa secara langsung.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
-                        <div class="timeline-text">
-                            <div class="timeline-date">2024</div>
-                            <h2>Barista & Community Keeper</h2>
-                            <h4>Black Opal, Surabaya</h4>
-                            <p>
-                                Mengelola layanan kopi sekaligus menciptakan ruang diskusi dan interaksi komunitas di lingkungan warung kopi.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Job Experience End -->
-        
-        
-        <!-- Banner Start -->
-        <div class="banner wow zoomIn" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="section-header text-center">
-                    <p>Dedikasi Saya</p>
-                    <h2>Lebih Dari <span>Sekedar </span>Harga</h2>
-                </div>
-                <div class="container banner-text">
-                    <p>
-                        Saya tidak menjual jasa. Saya menawarkan komitmen, pikiran, dan waktu untuk mendampingi proses yang bermakna. 
-      Setiap program adalah ruang belajar bersama.
+        <!-- SECTION: THE TRINITY (Jurnalis, Seniman Teater, Sastrawan) -->
+        <section class="persona-section" id="persona">
+            <div class="section-wrapper">
+                <div class="section-intro text-center">
+                    <span class="section-kicker">DIMENSI IDENTITAS</span>
+                    <h2 class="section-title">Trinitas Peran & Wacana</h2>
+                    <div class="divider-theatre"></div>
+                    <p class="section-lead">
+                        Ketiga entitas ini bukan ruang yang terpisah, melainkan tarikan nafas yang saling mengisi: kejelian jurnalis melihat retakan realitas, kedalaman sastrawan memahat makna, dan daya hidup aktor teater dalam menyalakan panggung dialog.
                     </p>
-                    <a class="btn">Ajak Kolaborasi</a>
+                </div>
+
+                <div class="trinity-grid">
+                    <!-- Column 1: Jurnalis & Riset -->
+                    <article class="trinity-card card-journalist">
+                        <div class="card-back-number">01</div>
+                        <div class="card-icon-box">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </div>
+                        <span class="trinity-role">LIPUTAN & DEDIKASI EMPIRIS</span>
+                        <h3 class="trinity-title">Jurnalis & Peneliti Sejarah</h3>
+                        <p class="trinity-text">
+                            Terbiasa menembus batasan berita kilat demi menghadirkan laporan mendalam. Berbekal latar filsafat dan riset sosial, setiap data diposisikan sebagai cermin kritik kekuasaan dan suara komunitas yang kerap dipinggirkan.
+                        </p>
+                        <div class="card-skills-tag">
+                            <span>Investigasi Lapangan</span>
+                            <span>Riset Arsip & Dokumen</span>
+                            <span>Kurasi Editorial</span>
+                            <span>Literasi Media</span>
+                        </div>
+                        <div class="card-quote-snip">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <span>"Jurnalisme sejati tidak pernah puas dengan permukaan; ia menggali hingga ke akar kegelisahan warga."</span>
+                        </div>
+                    </article>
+
+                    <!-- Column 2: Seniman Teater -->
+                    <article class="trinity-card card-theatre active-feature">
+                        <div class="card-back-number">02</div>
+                        <div class="card-icon-box">
+                            <i class="fa-solid fa-masks-theater"></i>
+                        </div>
+                        <span class="trinity-role">PANGGUNG & DRAMATURGI</span>
+                        <h3 class="trinity-title">Seniman Teater & Penulis Monolog</h3>
+                        <p class="trinity-text">
+                            Panggung adalah mahkamah nurani. Menulis teks drama dan monolog bukan sekadar merangkai dialog, tetapi membedah psikologi zaman, membakar kepalsuan retorika, dan mengajak penonton bercermin pada kerentanan diri.
+                        </p>
+                        <div class="card-skills-tag">
+                            <span>Penulisan Naskah Monolog</span>
+                            <span>Dramaturgi Kontekstual</span>
+                            <span>Eksplorasi Suara & Gerak</span>
+                            <span>Pentas Komunitas</span>
+                        </div>
+                        <div class="card-quote-snip">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <span>"Teater bukanlah pelarian dari kenyataan, melainkan penegasan paling jujur tentang luka dan harapan manusia."</span>
+                        </div>
+                    </article>
+
+                    <!-- Column 3: Sastrawan & Filsuf -->
+                    <article class="trinity-card card-literature">
+                        <div class="card-back-number">03</div>
+                        <div class="card-icon-box">
+                            <i class="fa-solid fa-feather"></i>
+                        </div>
+                        <span class="trinity-role">KATA, DIALEKTIKA & ESISTENSI</span>
+                        <h3 class="trinity-title">Sastrawan & Esais Filsafat</h3>
+                        <p class="trinity-text">
+                            Menekuni dialektika alam, etika kritis, dan fenomena kebudayaan pesisir. Menulis puisi renungan, obituari tokoh, hingga esai epistemologi yang menjembatani sains modern, kearifan maritim, dan spiritualitas kritis.
+                        </p>
+                        <div class="card-skills-tag">
+                            <span>Esai Filsafat & Ekologi</span>
+                            <span>Sastra Maritim & Puisi</span>
+                            <span>Kritik Ideologi</span>
+                            <span>Penyuntingan Naskah</span>
+                        </div>
+                        <div class="card-quote-snip">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <span>"Sastra adalah cara menjaga agar hati nurani tidak membatu oleh kalkulasi teknokratis zaman."</span>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-        <!-- Banner End -->
+        </section>
 
-
-        <!-- Portfolio Start -->
-        <div class="portfolio" id="portfolio">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>My Portfolio</p>
-                    <h2>My Excellent Portfolio</h2>
+        <!-- SECTION: EXPERIENCE TIMELINE / CHRONICLE -->
+        <section class="chronicle-section" id="experience">
+            <div class="section-wrapper">
+                <div class="section-intro text-center">
+                    <span class="section-kicker">KRONIK JEJAK & KIPRAH</span>
+                    <h2 class="section-title">Rekam Dedikasi Profesional</h2>
+                    <div class="divider-theatre"></div>
+                    <p class="section-lead">
+                        Sebuah lintasan perjalanan intelektual dan sosial di berbagai simpul gerakan, pers mahasiswa, yayasan riset, dan ruang-ruang komunitas.
+                    </p>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <ul id="portfolio-filter">
-                            <li data-filter="*" class="filter-active">All</li>
-                            <li data-filter=".filter-1">Portal Media</li>
-                            <li data-filter=".filter-2">Photografi</li>
-                            <li data-filter=".filter-3">Desain Grafis</li>
+
+                <div class="theatrical-timeline">
+                    <!-- Item 1 -->
+                    <div class="chronicle-item">
+                        <div class="chronicle-meta">
+                            <span class="chronicle-year">2023 — Sekarang</span>
+                            <span class="chronicle-type badge-gold">KREATIF & DRAMATURGI</span>
+                        </div>
+                        <div class="chronicle-body">
+                            <h3 class="chronicle-role">Script Writer & Pengembang Konten Naratif</h3>
+                            <h4 class="chronicle-org">Freelance & Produksi Kebudayaan Lokal</h4>
+                            <p class="chronicle-desc">
+                                Merumuskan alur cerita, dialog monolog, dan narasi video edukatif berbasis riset sosial. Mengembangkan struktur dramaturgi yang memastikan esensi pesan tersampaikan secara estetis dan menggugah audiens.
+                            </p>
+                            <ul class="chronicle-highlights">
+                                <li>Penyusunan naskah monolog bertema ketegangan psikologis dan realitas pinggiran.</li>
+                                <li>Pengolahan narasi video berbasis edukasi lingkungan dan mitigasi sosial.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="chronicle-item">
+                        <div class="chronicle-meta">
+                            <span class="chronicle-year">2024</span>
+                            <span class="chronicle-type badge-sepia">RUANG PUBLIK</span>
+                        </div>
+                        <div class="chronicle-body">
+                            <h3 class="chronicle-role">Community Keeper & Dialog Ruang Kopi</h3>
+                            <h4 class="chronicle-org">Black Opal, Surabaya</h4>
+                            <p class="chronicle-desc">
+                                Memfungsikan kedai kopi bukan semata ruang transaksi komoditas, melainkan gelanggang temu gagasan, mimbar apresiasi sastra, dan diskusi publik pemuda lintas disiplin.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="chronicle-item">
+                        <div class="chronicle-meta">
+                            <span class="chronicle-year">2023</span>
+                            <span class="chronicle-type badge-gold">PENGABDIAN WARGA</span>
+                        </div>
+                        <div class="chronicle-body">
+                            <h3 class="chronicle-role">Koordinator Divisi Pengabdian Masyarakat</h3>
+                            <h4 class="chronicle-org">Program Mitigasi Bencana Warga, Pasuruan</h4>
+                            <p class="chronicle-desc">
+                                Merancang model sosialisasi berbasis partisipatif dan pemetaan potensi risiko bencana. Mengintegrasikan pendekatan budaya tutur lokal agar materi mitigasi mudah diserap oleh warga desa dan kelompok rentan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="chronicle-item">
+                        <div class="chronicle-meta">
+                            <span class="chronicle-year">2022 — 2023</span>
+                            <span class="chronicle-type badge-red">PERS & INVESTIGASI</span>
+                        </div>
+                        <div class="chronicle-body">
+                            <h3 class="chronicle-role">Jurnalis & Tim Kurasi Editorial</h3>
+                            <h4 class="chronicle-org">Lentera Biru Press, Surabaya</h4>
+                            <p class="chronicle-desc">
+                                Melakukan reportase investigatif lapangan, mewawancarai narasumber kunci, menulis liputan mendalam (in-depth reporting), serta terlibat dalam penentuan garis editorial dan tata kelola rubrik media.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="chronicle-item">
+                        <div class="chronicle-meta">
+                            <span class="chronicle-year">2021 — 2022</span>
+                            <span class="chronicle-type badge-sepia">RISET & PENDIDIKAN</span>
+                        </div>
+                        <div class="chronicle-body">
+                            <h3 class="chronicle-role">Staf Riset & Kurikulum Media</h3>
+                            <h4 class="chronicle-org">Gramatika Foundation, Surabaya</h4>
+                            <p class="chronicle-desc">
+                                Menyusun modul literasi media, meneliti pola konsumsi informasi di kalangan santri dan pelajar, serta memfasilitasi lokakarya penulisan kritis bagi komunitas pemuda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="chronicle-item">
+                        <div class="chronicle-meta">
+                            <span class="chronicle-year">2022</span>
+                            <span class="chronicle-type badge-gold">KADERISASI</span>
+                        </div>
+                        <div class="chronicle-body">
+                            <h3 class="chronicle-role">Komite Seleksi & Evaluasi Kader</h3>
+                            <h4 class="chronicle-org">PMII Rayon Ushuluddin dan Filsafat</h4>
+                            <p class="chronicle-desc">
+                                Mengembangkan silabus kajian filsafat dan logika kritis, memfasilitasi dialektika forum, serta mengevaluasi perkembangan pemahaman peserta kaderisasi secara berkala.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: INTERACTIVE ARCHIVE / PORTFOLIO -->
+        <section class="archive-section" id="archive">
+            <div class="section-wrapper">
+                <div class="section-intro text-center">
+                    <span class="section-kicker">KATALOG REKAM JEJAK</span>
+                    <h2 class="section-title">Pustaka Karya & Dokumen</h2>
+                    <div class="divider-theatre"></div>
+                    <p class="section-lead">
+                        Pilihan dokumentasi kegiatan riset, artikel publikasi, kerja desain tata letak penerbitan, dan arsip media independen.
+                    </p>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="filter-controls-container">
+                    <button class="filter-pill active" data-filter="all">
+                        <i class="fa-solid fa-border-all"></i> Semua Arsip
+                    </button>
+                    <button class="filter-pill" data-filter="jurnalistik">
+                        <i class="fa-solid fa-newspaper"></i> Jurnalistik & Riset
+                    </button>
+                    <button class="filter-pill" data-filter="teater">
+                        <i class="fa-solid fa-masks-theater"></i> Naskah & Teater
+                    </button>
+                    <button class="filter-pill" data-filter="sastra">
+                        <i class="fa-solid fa-book-open"></i> Esai & Filsafat
+                    </button>
+                    <button class="filter-pill" data-filter="desain">
+                        <i class="fa-solid fa-bezier-curve"></i> Tata Letak & Grafis
+                    </button>
+                </div>
+
+                <!-- Archive Cards Grid -->
+                <div class="archive-grid" id="archiveGrid">
+
+                    <!-- Archive Item 1: Lentera Biru -->
+                    <article class="archive-card" data-category="jurnalistik">
+                        <div class="archive-card-header">
+                            <span class="archive-category">JURNALISTIK</span>
+                            <span class="archive-date">2022-2023</span>
+                        </div>
+                        <div class="archive-card-body">
+                            <h3 class="archive-title">Lentera Biru Press: Investigasi & Narasi Publik</h3>
+                            <p class="archive-snippet">
+                                Liputan mendalam berbasis riset lapangan seputar dinamika kampus, kritik kebijakan publik, dan ruang hidup mahasiswa.
+                            </p>
+                            <div class="archive-meta-tags">
+                                <span>#InDepthReporting</span>
+                                <span>#Redaksi</span>
+                                <span>#Surabaya</span>
+                            </div>
+                        </div>
+                        <div class="archive-card-footer">
+                            <button class="btn-read-dossier" data-dossier="lentera-biru">
+                                <span>Buka Dosir Dokumen</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Archive Item 2: Naskah Monolog -->
+                    <article class="archive-card" data-category="teater">
+                        <div class="archive-card-header">
+                            <span class="archive-category">NASKAH TEATER</span>
+                            <span class="archive-date">2024</span>
+                        </div>
+                        <div class="archive-card-body">
+                            <h3 class="archive-title">Naskah Monolog: "Gumam dari Balik Tirai yang Robek"</h3>
+                            <p class="archive-snippet">
+                                Teks panggung yang menggali keterasingan manusia di tengah kebisingan mekanis kota, membedah batas antara akal sehat dan kepura-puraan sosial.
+                            </p>
+                            <div class="archive-meta-tags">
+                                <span>#Monolog</span>
+                                <span>#Dramaturgi</span>
+                                <span>#TeaterNaratif</span>
+                            </div>
+                        </div>
+                        <div class="archive-card-footer">
+                            <button class="btn-read-dossier" data-dossier="naskah-monolog">
+                                <span>Baca Fragmen Naskah</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Archive Item 3: Esai Ekologi -->
+                    <article class="archive-card" data-category="sastra">
+                        <div class="archive-card-header">
+                            <span class="archive-category">ESAI FILSAFAT</span>
+                            <span class="archive-date">Mengeja.id</span>
+                        </div>
+                        <div class="archive-card-body">
+                            <h3 class="archive-title">Pemikiran Peradaban Ekologis pada "Dialectics of Nature"</h3>
+                            <p class="archive-snippet">
+                                Telaah kritis atas hubungan timbal-balik alam dan manusia, serta peringatan terhadap watak eksploitatif yang meremukkan tatanan biosfer.
+                            </p>
+                            <div class="archive-meta-tags">
+                                <span>#DialektikaAlam</span>
+                                <span>#EkologiKritis</span>
+                                <span>#Filsafat</span>
+                            </div>
+                        </div>
+                        <div class="archive-card-footer">
+                            <button class="btn-read-dossier" data-dossier="dialektika-alam">
+                                <span>Baca Ringkasan Esai</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Archive Item 4: Daras Filsafat -->
+                    <article class="archive-card" data-category="sastra">
+                        <div class="archive-card-header">
+                            <span class="archive-category">KOMUNITAS & WACANA</span>
+                            <span class="archive-date">darasfilsafat.com</span>
+                        </div>
+                        <div class="archive-card-body">
+                            <h3 class="archive-title">Daras Filsafat: Epistemologi Sibernetik di Era Eksperimen</h3>
+                            <p class="archive-snippet">
+                                Menawarkan cara pandang sibernetik sebagai alternatif terbuka dalam merespons krisis epistemik dan disrupsi informasi global.
+                            </p>
+                            <div class="archive-meta-tags">
+                                <span>#Sibernetika</span>
+                                <span>#Epistemologi</span>
+                                <span>#Wacana</span>
+                            </div>
+                        </div>
+                        <div class="archive-card-footer">
+                            <button class="btn-read-dossier" data-dossier="daras-filsafat">
+                                <span>Buka Ulasan Wacana</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Archive Item 5: Sastra Maritim Buih Doa -->
+                    <article class="archive-card" data-category="sastra">
+                        <div class="archive-card-header">
+                            <span class="archive-category">SASTRA & BUDAYA</span>
+                            <span class="archive-date">Banyuwangi</span>
+                        </div>
+                        <div class="archive-card-body">
+                            <h3 class="archive-title">Buih Doa Petik Laut: Spiritualitas Nelayan & Debur Ombak</h3>
+                            <p class="archive-snippet">
+                                Catatan antropologis dan puitis tentang ritual larung sesaji Petik Laut di Muncar; dialektika antara ketakjuban, ketergantungan alam, dan doa yang terapung.
+                            </p>
+                            <div class="archive-meta-tags">
+                                <span>#PetikLaut</span>
+                                <span>#SastraPesisir</span>
+                                <span>#Muncar</span>
+                            </div>
+                        </div>
+                        <div class="archive-card-footer">
+                            <button class="btn-read-dossier" data-dossier="petik-laut">
+                                <span>Baca Catatan Pesisir</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Archive Item 6: Tata Letak Media & Buku -->
+                    <article class="archive-card" data-category="desain">
+                        <div class="archive-card-header">
+                            <span class="archive-category">TATA LETAK MEDIA</span>
+                            <span class="archive-date">InDesign / DTP</span>
+                        </div>
+                        <div class="archive-card-body">
+                            <h3 class="archive-title">Tipografi Editorial & Tata Letak Buku Komunitas</h3>
+                            <p class="archive-snippet">
+                                Desain modular, kisi-kisi (grid) editorial, kurasi tipografi serif dan tata ruang baca yang mengutamakan kenyamanan pembacaan teks panjang.
+                            </p>
+                            <div class="archive-meta-tags">
+                                <span>#AdobeInDesign</span>
+                                <span>#BookLayout</span>
+                                <span>#Tipografi</span>
+                            </div>
+                        </div>
+                        <div class="archive-card-footer">
+                            <button class="btn-read-dossier" data-dossier="tata-letak">
+                                <span>Lihat Spesifikasi Desain</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: THEATRICAL MONOLOGUE & DRAMA SHOWCASE -->
+        <section class="monolog-section" id="monolog">
+            <div class="section-wrapper">
+                <div class="theatre-stage-box">
+                    <div class="stage-lighting-top" aria-hidden="true"></div>
+                    
+                    <div class="stage-header">
+                        <div class="stage-act-label">
+                            <span class="act-indicator"></span>
+                            <span>BABAK III • SUDUT MONOLOG & PANGGUNG</span>
+                        </div>
+                        <h2 class="stage-main-title">Panggung Kata & Olah Rasa</h2>
+                        <p class="stage-subtitle">
+                            "Di bawah satu sorot lampu, seorang manusia berbicara bukan karena ia punya jawaban, melainkan karena ia menolak untuk bungkam."
+                        </p>
+                    </div>
+
+                    <!-- Script Excerpt Reader Card -->
+                    <div class="script-reader-container">
+                        <div class="script-header-bar">
+                            <div class="script-filename">
+                                <i class="fa-solid fa-file-lines"></i>
+                                <span>FRAGMEN_MONOLOG_FAHMI_AYATULLAH.TXT</span>
+                            </div>
+                            <div class="script-actions">
+                                <button class="btn-script-action" id="scriptPlayAtmosphere" title="Bunyikan Suasana Hening Panggung">
+                                    <i class="fa-solid fa-volume-high"></i>
+                                    <span>Hening Panggung</span>
+                                </button>
+                                <button class="btn-script-action" id="scriptFontToggle" title="Perbesar Teks Skrip">
+                                    <i class="fa-solid fa-text-height"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="script-body" id="scriptBodyText">
+                            <div class="script-direction">[Lampu sorot putih-kekuningan perlahan meremang di tengah panggung. Suara gemerisik ombak pesisir terdengar samar di kejauhan. Aktor berdiri dengan mantel lusuh, menatap kosong ke arah deretan bangku kosong.]</div>
+                            
+                            <p class="script-dialogue">
+                                <strong>AKTOR:</strong><br>
+                                "Kalian pikir panggung ini hanya papan kayu yang dipaku terburu-buru? Bukan. Ini adalah sisa-sisa lantai kapal yang pernah karam di teluk masa silam. Di sini, setiap kata yang kuucapkan harus mempertanggungjawabkan dirinya di hadapan angin malam."
+                            </p>
+
+                            <div class="script-direction">[Ia melangkah dua ketukan ke kiri. Mengusap debu imajiner di atas telapak tangannya.]</div>
+
+                            <p class="script-dialogue">
+                                <strong>AKTOR:</strong><br>
+                                "Seorang jurnalis mencatat berapa korban yang hanyut; seorang sastrawan menangisi nama-nama yang lenyap dari ingatan; dan seorang pemain teater... ia harus berani menjelma menjadi ombak itu sendiri! Agar mereka yang duduk di kegelapan tahu, dinginnya air laut bukan sekadar angka statistik dalam laporan berita pagi."
+                            </p>
+
+                            <div class="script-direction">[Hening lima detik. Lampu menyempit hanya menyorot wajah. Blackout perlahan.]</div>
+                        </div>
+
+                        <div class="script-footer-bar">
+                            <span class="script-author">Naskah Karya: Fahmi Ayatullah • Hak Cipta Komunitas Teater</span>
+                            <a href="https://wa.me/6282213297661?text=Halo%20Fahmi,%20saya%20ingin%20berkolaborasi%20untuk%20produksi%20naskah%20teater/monolog." target="_blank" rel="noopener" class="btn-script-collab">
+                                <i class="fa-solid fa-masks-theater"></i>
+                                <span>Ajak Diskusi Pementasan</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: ESSAYS & PHILOSOPHICAL REFLECTIONS -->
+        <section class="essays-section" id="essays">
+            <div class="section-wrapper">
+                <div class="section-intro text-center">
+                    <span class="section-kicker">WACANA & KONTEMPLASI</span>
+                    <h2 class="section-title">Esai Terpilih & Pemikiran Kritis</h2>
+                    <div class="divider-theatre"></div>
+                    <p class="section-lead">
+                        Refleksi filosofis, pembacaan dialektika sosial, dan catatan lapangan yang telah terbit di jurnal wacana dan portal pemikiran.
+                    </p>
+                </div>
+
+                <div class="essays-editorial-grid">
+                    <!-- Featured Longform Essay -->
+                    <article class="featured-essay-card">
+                        <div class="essay-banner-tag">ESAI UTAMA • EKOLOGI & DIALEKTIKA</div>
+                        <h3 class="featured-essay-title">
+                            Menemukan Kembali Dialektika Alam: Kritik atas Teknokrasi dan Penjarahan Ekosistem
+                        </h3>
+                        <div class="essay-metadata">
+                            <span><i class="fa-regular fa-user"></i> Fahmi Ayatullah, S.Ag</span>
+                            <span><i class="fa-regular fa-folder"></i> Mengeja.id</span>
+                            <span><i class="fa-regular fa-clock"></i> 7 Menit Baca</span>
+                        </div>
+                        <p class="essay-excerpt">
+                            Alam bukan entitas pasif yang tunduk tanpa batas pada kalkulasi akumulasi manusia. Melalui pembacaan ulang <em>Dialectics of Nature</em>, kita disadarkan bahwa setiap intervensi manusia terhadap biosfer akan memicu resonansi balik. Tatkala hutan dibabat dan pesisir diuruk demi efisiensi sepihak, alam menjawab dengan krisis yang menuntut pertanggungjawaban etis...
+                        </p>
+                        <div class="essay-footer">
+                            <button class="btn-theatre btn-read-full" data-dossier="dialektika-alam">
+                                <span>Baca Ringkasan Lengkap</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Secondary Essays Stack -->
+                    <div class="secondary-essays-stack">
+                        <!-- Card 1 -->
+                        <article class="stack-essay-card">
+                            <span class="stack-tag">FILSAFAT SOSIAL</span>
+                            <h4 class="stack-title">Banalitas Intelektual di Ruang Publik Digital</h4>
+                            <p class="stack-desc">
+                                Ketika kecerdasan dipersempit menjadi kecepatan adu argumen di media sosial, kita kehilangan daya renung yang sabar dan etika mendengarkan yang setara.
+                            </p>
+                            <button class="link-essay-more" data-dossier="banalitas">
+                                <span>Pelajari Wacana</span> <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="stack-essay-card">
+                            <span class="stack-tag">SASTRA & PESISIR</span>
+                            <h4 class="stack-title">Beberapa Hari Ini Laut Menampilkan Wajah yang Murung</h4>
+                            <p class="stack-desc">
+                                Narasi puitik tentang denyut kehidupan para nelayan di Selat Bali; perjumpaan antara kepasrahan pada takdir ombak dan kegigihan menjemput rezeki.
+                            </p>
+                            <button class="link-essay-more" data-dossier="laut-murung">
+                                <span>Pelajari Wacana</span> <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </article>
+
+                        <!-- Card 3 -->
+                        <article class="stack-essay-card">
+                            <span class="stack-tag">OBITUARI & SEJARAH</span>
+                            <h4 class="stack-title">Obituari KH. Ach Fauzi Imron: Suluk Guru dan Pengabdian Sunyi</h4>
+                            <p class="stack-desc">
+                                Rekam jejak keteladanan seorang ulama pendidik yang merawat ilmu dan umat tanpa riuh pamrih popularitas.
+                            </p>
+                            <button class="link-essay-more" data-dossier="obituari">
+                                <span>Pelajari Wacana</span> <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Quotation Generator / Pojok Kontemplasi -->
+                <div class="contemplation-box">
+                    <div class="contemplation-header">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <span>POJOK KONTEMPLASI • GUMAM PIKIRAN</span>
+                    </div>
+                    <div class="contemplation-quote" id="dynamicQuoteText">
+                        "Saya tidak menjual jasa. Saya menawarkan komitmen, pikiran, dan waktu untuk mendampingi proses yang bermakna. Setiap program adalah ruang belajar bersama."
+                    </div>
+                    <div class="contemplation-source" id="dynamicQuoteAuthor">
+                        — Fahmi Ayatullah, S.Ag (Nilai Dedikasi)
+                    </div>
+                    <button class="btn-refresh-quote" id="refreshQuoteBtn" aria-label="Ganti Kutipan">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        <span>Ganti Renungan</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: RESONANCE & COLLABORATORS (MENTORS & REVIEWS) -->
+        <section class="resonance-section" id="mentors">
+            <div class="section-wrapper">
+                <div class="section-intro text-center">
+                    <span class="section-kicker">RESONANSI & PENGAKUAN</span>
+                    <h2 class="section-title">Kesaksian Kolega & Mentor</h2>
+                    <div class="divider-theatre"></div>
+                    <p class="section-lead">
+                        Kata mereka yang pernah berbagi ruang panggung, meja riset, dan lapangan perjuangan kebudayaan bersama Fahmi Ayatullah.
+                    </p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <!-- Colleague 1 -->
+                    <div class="resonance-card">
+                        <div class="res-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="res-text">
+                            “Ayat bukan konseptor yang rapi dan kaku di atas kertas, tapi dia adalah pendengar yang luar biasa jeli. Ia mampu menerjemahkan kebutuhan terdalam sebuah program ke dalam kelancaran aksi nyata di lapangan.”
+                        </p>
+                        <div class="res-author">
+                            <div class="author-avatar-badge">AF</div>
+                            <div class="author-meta">
+                                <h4 class="author-name">Ava Fahmi Yusep, S.Ag</h4>
+                                <span class="author-title">Peneliti Filsafat Islam & Kolega Akademik</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Colleague 2 -->
+                    <div class="resonance-card highlight-card">
+                        <div class="res-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="res-text">
+                            “Kami bekerja sama dalam fasilitasi pelatihan jurnalistik di Probolinggo. Yang sangat mengesankan dari Ayat adalah kepekaan naratifnya yang tidak sekadar mengajari, melainkan membangun dialog yang akrab. Anak-anak, pemuda, hingga perangkat desa merasa nyaman berinteraksi dengannya.”
+                        </p>
+                        <div class="res-author">
+                            <div class="author-avatar-badge">NH</div>
+                            <div class="author-meta">
+                                <h4 class="author-name">Nurhalimah, M.Ag, CH, CHt</h4>
+                                <span class="author-title">Dosen & Co. Therapist Insight Consultant</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Colleague 3 -->
+                    <div class="resonance-card">
+                        <div class="res-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="res-text">
+                            “Ayat itu multitalenta sejati — energinya bergerak dari riset sejarah hingga panggung sastra. Semangatnya untuk merawat kebudayaan dan ruang alternatif pantas mendapat ruang kolaborasi seluas-luasnya.”
+                        </p>
+                        <div class="res-author">
+                            <div class="author-avatar-badge">AT</div>
+                            <div class="author-meta">
+                                <h4 class="author-name">Awali Taufiqi</h4>
+                                <span class="author-title">Founder Warawara Project</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mentors Row -->
+                <div class="mentors-banner">
+                    <div class="mentors-label">RUANG BELAJAR BERSAMA TOKOH:</div>
+                    <div class="mentors-tags">
+                        <div class="mentor-item">
+                            <span class="m-name">Eko Wahyu Pratama</span>
+                            <span class="m-desc">Peneliti Budaya & Penggerak Komunitas Daras Filsafat Muncar</span>
+                        </div>
+                        <span class="m-sep">•</span>
+                        <div class="mentor-item">
+                            <span class="m-name">Izat Ramzi</span>
+                            <span class="m-desc">Aktivis Kebudayaan Maritim & Founder Punnel Communication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: VALUES & ETHOS -->
+        <section class="ethos-section" id="ethos">
+            <div class="section-wrapper">
+                <div class="section-intro text-center">
+                    <span class="section-kicker">PRINSIP BERPIJAK</span>
+                    <h2 class="section-title">Nilai Utama dalam Setiap Karya</h2>
+                    <div class="divider-theatre"></div>
+                </div>
+
+                <div class="ethos-grid">
+                    <div class="ethos-card">
+                        <div class="ethos-num">I</div>
+                        <h3 class="ethos-title">Berpihak pada Komunitas</h3>
+                        <ul class="ethos-list">
+                            <li><i class="fa-solid fa-angle-right"></i> Mengamati denyut warga tanpa prasangka</li>
+                            <li><i class="fa-solid fa-angle-right"></i> Memahami konteks sosiologis lokal</li>
+                            <li><i class="fa-solid fa-angle-right"></i> Mendengarkan cerita yang tak terdengar</li>
+                            <li><i class="fa-solid fa-angle-right"></i> Aksi bersama yang menumbuhkan martabat</li>
+                        </ul>
+                    </div>
+
+                    <div class="ethos-card highlight-ethos">
+                        <div class="ethos-num">II</div>
+                        <h3 class="ethos-title">Ruang Belajar Bersama</h3>
+                        <ul class="ethos-list">
+                            <li><i class="fa-solid fa-angle-right"></i> Keakraban tanpa sekat hierarki</li>
+                            <li><i class="fa-solid fa-angle-right"></i> Bertaut pengalaman antar generasi</li>
+                            <li><i class="fa-solid fa-angle-right"></i> Keterbukaan pikiran terhadap kritik</li>
+                            <li><i class="fa-solid fa-angle-right"></i> Kesetaraan dalam mimbar dialog</li>
+                        </ul>
+                    </div>
+
+                    <div class="ethos-card">
+                        <div class="ethos-num">III</div>
+                        <h3 class="ethos-title">Kritik sebagai Etika</h3>
+                        <ul class="ethos-list">
+                            <li><i class="fa-solid fa-angle-right"></i> Keterlibatan aktif dalam masalah publik</li>
+                            <li><i class="fa-solid fa-angle-right"></i> Pembelajaran berkelanjutan seumur hidup</li>
+                            <li><i class="fa-solid fa-angle-right"></i> Perawatan atas warisan ingatan sejarah</li>
+                            <li><i class="fa-solid fa-angle-right"></i> Refleksi jujur demi perbaikan bersama</li>
                         </ul>
                     </div>
                 </div>
-                <div class="row portfolio-container">
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-1.jpg" alt="Image">
+            </div>
+        </section>
+
+        <!-- SECTION: DIALOGUE & CONTACT (THEATRICAL INVITATION) -->
+        <section class="contact-section" id="contact">
+            <div class="section-wrapper">
+                <div class="contact-card-theatre">
+                    <div class="contact-grid">
+                        <!-- Left Details -->
+                        <div class="contact-info-panel">
+                            <span class="contact-kicker">RUANG TEMU</span>
+                            <h2 class="contact-title">Mari Merajut Dialog & Kolaborasi</h2>
+                            <p class="contact-desc">
+                                Terbuka untuk diskusi penulisan naskah drama/monolog, riset sejarah dan kebudayaan, kurasi program komunitas, pelatihan literasi media, hingga tata letak terbitan buku.
+                            </p>
+
+                            <div class="contact-details-list">
+                                <a href="https://wa.me/6282213297661" target="_blank" rel="noopener" class="contact-detail-item">
+                                    <div class="detail-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">WhatsApp Langsung</span>
+                                        <span class="detail-val">+62 822-1329-7661</span>
+                                    </div>
+                                </a>
+
+                                <a href="mailto:fahmiayatollah@gmail.com" class="contact-detail-item">
+                                    <div class="detail-icon"><i class="fa-regular fa-envelope"></i></div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Surat Elektronik</span>
+                                        <span class="detail-val">fahmiayatollah@gmail.com</span>
+                                    </div>
+                                </a>
+
+                                <div class="contact-detail-item">
+                                    <div class="detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="detail-text">
+                                        <span class="detail-label">Ruang Gerak</span>
+                                        <span class="detail-val">Banyuwangi & Surabaya, Jawa Timur, Indonesia</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="portfolio-text">
-                                <h3>Lentera Biru Press</h3>
-                                <a class="btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-2.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>Pasuruan, Indonesia</h3>
-                                <a class="btn" href="img/portfolio-2.jpg" data-lightbox="portfolio">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-3.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>Desain Grafis</h3>
-                                <a class="btn" href="img/portfolio-3.jpg" data-lightbox="portfolio">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-4.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>darasfilsafat.com</h3>
-                                <a class="btn" href="img/portfolio-4.jpg" data-lightbox="portfolio">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.8s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-5.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>Pasuruan, Indonesia</h3>
-                                <a class="btn" href="img/portfolio-5.jpg" data-lightbox="portfolio">+</a>
+
+                            <div class="contact-social-bar">
+                                <span class="social-lead">Kanal Jejaring :</span>
+                                <div class="social-icons">
+                                    <a href="https://www.instagram.com/fahmiayatollahh?igsh=MXRpNW1obDB4cjl4Ng==" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="https://wa.me/6282213297661" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                                    <a href="mailto:fahmiayatollah@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="1s">
-                        <div class="portfolio-wrap">
-                            <div class="portfolio-img">
-                                <img src="img/portfolio-6.jpg" alt="Image">
-                            </div>
-                            <div class="portfolio-text">
-                                <h3>Desain grafis</h3>
-                                <a class="btn" href="img/portfolio-6.jpg" data-lightbox="portfolio">+</a>
-                            </div>
+
+                        <!-- Right Interactive WhatsApp Message Composer -->
+                        <div class="contact-composer-panel">
+                            <h3 class="composer-title">Tulis Pesan / Ajak Diskusi</h3>
+                            <form id="collabForm" class="collab-form">
+                                <div class="form-group">
+                                    <label for="senderName">Nama Lengkap / Instansi</label>
+                                    <input type="text" id="senderName" required placeholder="Contoh: Rian / Komunitas Teater Surabaya">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="collabTopic">Fokus Minat Diskusi</label>
+                                    <select id="collabTopic">
+                                        <option value="Penulisan Naskah Teater & Monolog">Penulisan Naskah Teater & Monolog</option>
+                                        <option value="Riset Jurnalistik & Sejarah Kebudayaan">Riset Jurnalistik & Sejarah Kebudayaan</option>
+                                        <option value="Kurasi & Evaluasi Program Komunitas">Kurasi & Evaluasi Program Komunitas</option>
+                                        <option value="Pelatihan Literasi Media & Fasilitator">Pelatihan Literasi Media & Fasilitator</option>
+                                        <option value="Desain Tata Letak Buku & Media">Desain Tata Letak Buku & Media</option>
+                                        <option value="Diskusi Santai / Ngaji Pemikiran">Diskusi Santai / Ngaji Pemikiran</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="senderMessage">Rencana Gagasan / Catatan</label>
+                                    <textarea id="senderMessage" rows="4" required placeholder="Ceritakan singkat gagasan atau kebutuhan program Anda..."></textarea>
+                                </div>
+
+                                <button type="submit" class="btn-theatre btn-submit-wa">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <span>Kirimkan via WhatsApp</span>
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Portfolio End -->
-        
-        
-        <!-- Banner Start -->
-        <div class="banner wow zoomIn" data-wow-delay="0.1s">
-            <div class="container">
-                <div class="section-header text-center">
-                    <p>KREDENSIAL</p>
-                    <h2>Sertifikat <span>&</span> Kompetensi</h2>
-                </div>
-                <div class="container banner-text">
-                    <p>
-                        Beberapa sertifikasi dan pelatihan telah saya ikuti sebagai bagian dari penguatan kompetensi dalam bidang pelatihan, riset, literasi media, dan desain komunikasi visual.
-                        Sertifikat ini menjadi bukti keterlibatan saya secara profesional maupun relawan dalam berbagai program berbasis masyarakat dan pendidikan. 
+        </section>
+
+    </main>
+
+    <!-- FOOTER: Broadsheet Colophon -->
+    <footer class="colophon-footer">
+        <div class="section-wrapper">
+            <div class="colophon-grid">
+                <div class="colophon-brand">
+                    <span class="colophon-logo">FAHMI AYATULLAH, S.Ag</span>
+                    <p class="colophon-tagline">
+                        Mendedikasikan diri pada kedalaman makna, keterbukaan dialog, dan keberanian menyuarakan kebenaran melalui kata dan panggung.
                     </p>
-                    <a class="btn">Lihat Sertifikat</a>
+                </div>
+                <div class="colophon-nav">
+                    <h4>Pintasan Halaman</h4>
+                    <ul>
+                        <li><a href="#hero">Prolog Utama</a></li>
+                        <li><a href="#persona">Trinitas Peran</a></li>
+                        <li><a href="#experience">Kronik Jejak</a></li>
+                        <li><a href="#archive">Pustaka Karya</a></li>
+                        <li><a href="#monolog">Panggung Teater</a></li>
+                        <li><a href="#essays">Wacana Esai</a></li>
+                    </ul>
+                </div>
+                <div class="colophon-values">
+                    <h4>Etos Kerja</h4>
+                    <p>“Program yang baik adalah program yang direncanakan secara rapi, dijalankan dengan kesungguhan, dan dievaluasi secara jujur demi keberlanjutan.”</p>
+                    <span class="colophon-loc"><i class="fa-solid fa-location-pin"></i> Banyuwangi — Surabaya, Indonesia</span>
+                </div>
+            </div>
+
+            <div class="colophon-bottom">
+                <p>&copy; 2026 Fahmi Ayatullah, S.Ag. Seluruh hak cipta karya sastra, naskah, dan arsip dilindungi etika keilmuan.</p>
+                <div class="colophon-badges">
+                    <span>Edisi Kurasi Estetis</span>
+                    <span class="dot">•</span>
+                    <span>Jogang.id</span>
                 </div>
             </div>
         </div>
-        <!-- Banner End -->
-        
-        
-        <!-- Price Start -->
-        <div class="price" id="price">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>NILAI UTAMA</p>
-                    <h2>Nilai yang Saya Bawa dalam Setiap Kegiatan</h2>
+    </footer>
+
+    <!-- INTERACTIVE DOSSIER READING MODAL -->
+    <div class="dossier-modal" id="dossierModal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="dossier-modal-backdrop" id="dossierBackdrop"></div>
+        <div class="dossier-modal-window">
+            <div class="dossier-modal-header">
+                <div class="dossier-header-title">
+                    <span class="dossier-tag" id="dossierTag">ARSIP WACANA</span>
+                    <h3 id="dossierModalTitle">Judul Dokumen</h3>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="price-item">
-                            <div class="price-header">
-                                <div class="price-title">
-                                    <h2>Berpihak pada Komunitas</h2>
-                                </div>
-                                <div class="price-prices">
-                                    <h2></h2>
-                                </div>
-                            </div>
-                            <div class="price-body">
-                                <div class="price-description">
-                                    <ul>
-                                        <li>Mengamati</li>
-                                        <li>Memahami</li>
-                                        <li>Mendengarkan</li>
-                                        <li>Aksi</li>
-                                        <li>Lalu menumbuhkan Potensi</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="price-footer">
-                                <div class="price-action">
-                                    <a class="btn" href="https://wa.me/6282213297661">Ajak Kolaborasi</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="price-item featured-item">
-                            <div class="price-header">
-                                <div class="price-title">
-                                    <h2>Ruang Belajar Bersama</h2>
-                                </div>
-                                <div class="price-prices">
-                                    <h2></h2>
-                                </div>
-                            </div>
-                            <div class="price-body">
-                                <div class="price-description">
-                                    <ul>
-                                        <li>Akrab</li>
-                                        <li>Bertaut Pengalaman</li>
-                                        <li>Keterbukaan</li>
-                                        <li>Jujur</li>
-                                        <li>Setara</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="price-footer">
-                                <div class="price-action">
-                                    <a class="btn" href="https://wa.me/6282213297661">Mari Diskusi</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="price-item">
-                            <div class="price-header">
-                                <div class="price-title">
-                                    <h2>Kritik sebagai Etika</h2>
-                                </div>
-                                <div class="price-prices">
-                                    <h2></h2>
-                                </div>
-                            </div>
-                            <div class="price-body">
-                                <div class="price-description">
-                                    <ul>
-                                        <li>Keterlibatan</li>
-                                        <li>Pembelajaran</li>
-                                        <li>Perawatan</li>
-                                        <li>Kolaborasi</li>
-                                        <li>Refleksi</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="price-footer">
-                                <div class="price-action">
-                                    <a class="btn" href="https://wa.me/6282213297661">Hubungi Saya</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <button class="dossier-close-btn" id="dossierCloseBtn" aria-label="Tutup Dosir">&times;</button>
+            </div>
+            <div class="dossier-modal-body" id="dossierModalBody">
+                <!-- Injected via JavaScript -->
+            </div>
+            <div class="dossier-modal-footer">
+                <span class="dossier-source" id="dossierSourceNote">Sumber: Dokumen Arsip Fahmi Ayatullah</span>
+                <a href="https://wa.me/6282213297661" target="_blank" rel="noopener" class="btn-theatre btn-dossier-discuss">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Diskusikan Karya Ini</span>
+                </a>
             </div>
         </div>
-        <!-- Price End -->
-        
-        
-        <!-- Testimonial Start -->
-        <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
-            <div class="container">
-                <div class="testimonial-icon">
-                    <i class="fa fa-quote-left"></i>
-                </div>
-                <div class="owl-carousel testimonials-carousel">
-                    <div class="testimonial-item">
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-1.jpg" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                “Ayat bukan konseptor yang rapi dan handal, tapi dia lebih ke pendengarnya. Meskipun begitu Ayat seakan mampu menerjemahkan kebutuhan program dan kelancaran acara.”
-                            </p>
-                            <h3>Ava Fahmi Yusep S.Ag</h3>
-                            <h4>Peneliti Filsafat Islam</h4>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-2.jpg" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Kami bekerja sama dalam fasilitasi pelatihan jurnalistik di Probolinggo. Yang mengesankan dari Ayat adalah kepekaan naratifnya yang tidak sekadar menyampaikan, tapi membangun dialog. Anak-anak, pemuda, dan perangkat desa bisa merasa dekat dengannya.
-                            </p>
-                            <h3>Nurhalimah, M.Ag, CH, CHt, C.PS.</h3>
-                            <h4>Dosen, Co. Therapis Insight Consultant</h4>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-img">
-                            <img src="img/testimonial-3.jpg" alt="Image">
-                        </div>
-                        <div class="testimonial-text">
-                            <p>
-                                Ayat itu multilenta, cuma nggak berduit aja
-                            </p>
-                            <h3>Awali taufiqi</h3>
-                            <h4>Founder Warawara Project</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
+    </div>
 
-
-        <!-- Team Start -->
-        <div class="team" id="team">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Mentor</p>
-                    <h2>Mentor Saya</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" alt="Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Eko Wahyu Pratama</h2>
-                                <h4>Peneliti Budaya</h4>
-                                <p>
-                                    Penggerak Komunitas Daras Filsafat Muncar 
-                                </p>
-                                <div class="team-social">
-                                    <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" alt="Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Izat Ramzi</h2>
-                                <h4>Aktivis kebudayaan Maritim</h4>
-                                <p>
-                                    Founder Punnel Communiaction Muncar
-                                </p>
-                                <div class="team-social">
-                                    <a class="btn" href=""><i class="fab fa-twitter"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a class="btn" href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                             </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Team End -->
-        
-        
-        <!-- Contact Start -->
-        <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-8">
-                            <div class="contact-form">
-                                <div id="success"></div>
-                                <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                                    <div class="control-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                                        <p class="help-block"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                                        <p class="help-block"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                                        <p class="help-block"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                        <p class="help-block"></p>
-                                    </div>
-                                    <div>
-                                        <button class="btn" type="submit" id="sendMessageButton">Send Message</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Contact End -->
-
-
-        <!-- Blog Start -->
-        <div class="blog" id="blog">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p>Blog</p>
-                    <h2>Artikel</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="blog-img">
-                                <img src="img/blog-1.jpg" alt="Blog">
-                            </div>
-                            <div class="blog-text">
-                                <h2>Implikasi Kontemporer Dialictical of Nature Freidrich Engels Menuju Peradaban Ekologis</h2>
-                                <div class="blog-meta">
-                                    <p><i class="far fa-user"></i>Fahmi Ayatullah</p>
-                                    <p><i class="far fa-list-alt"></i>admin</p>
-                                    <p><i class="far fa-calendar-alt"></i>01-Jan-2023</p>
-                                    <p><i class="far fa-comments"></i>5</p>
-                                </div>
-                                <p>
-                                    Dialektika Alam mengungkapkan bahwa alam terus bergerak, berubah, dan berkembang, memberikan analisis rinci tentang hubungan antara manusia dan alam, dan memperingatkan manusia untuk tidak menjarah alam secara tidak terkendali.
-                                </p>
-                                <a class="btn" href="">Selengkapnya <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="blog-img">
-                                <img src="img/blog-2.jpg" alt="Blog">
-                            </div>
-                            <div class="blog-text">
-                                <h2>Penawaran Epistemologi Sibernetik di Era Ilmu Eksperimental</h2>
-                                <div class="blog-meta">
-                                    <p><i class="far fa-user"></i>fahmi Ayatullah</p>
-                                    <p><i class="far fa-list-alt"></i>admin</p>
-                                    <p><i class="far fa-calendar-alt"></i>01-Jul-2025</p>
-                                    <p><i class="far fa-comments"></i>10</p>
-                                </div>
-                                <p>
-                                    Krisis epistemik dan kompleksitas global, epistemologi sibernetik menjadi alternatif yang menjanjikan untuk membangun cara berpikir yang lebih terbuka, adaptif, dan bertanggung jawab.
-                                </p>
-                                <a class="btn" href="">Selengkapnya <i class="fa fa-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Blog End -->
-
-
-        <!-- Footer Start -->
-        <div class="footer wow fadeIn" data-wow-delay="0.3s">
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="footer-info">
-                        <h2>Fahmi Ayatullah S.Ag</h2>
-                        <h3>Banyuwangi, Indonesia</h3>
-                        <div class="footer-menu">
-                            <p>082213297661</p>
-                            <p>fahmiayatollah@gmail.com</p>
-                        </div>
-                        <div class="footer-social">
-                            <a href="https://www.instagram.com/fahmiayatollahh?igsh=MXRpNW1obDB4cjl4Ng=="><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.instagram.com/fahmiayatollahh?igsh=MXRpNW1obDB4cjl4Ng=="><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/fahmiayatollahh?igsh=MXRpNW1obDB4cjl4Ng=="><i class="fab fa-youtube"></i></a>
-                            <a href="https://www.instagram.com/fahmiayatollahh?igsh=MXRpNW1obDB4cjl4Ng=="><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container copyright">
-                    <p>&copy; <a href="#">Jogang.Id</a>, All Right Reserved | 
-					
-					<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a href="https://wa.me/6282213297661">Fahmi Ayatullah</a></p>
-                </div>
-            </div>
-        </div>
-        <!-- Footer End -->
-        
-        
-        <!-- Back to top button -->
-        <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
-        
-        
-        <!-- Pre Loader -->
-        <div id="loader" class="show">
-            <div class="loader"></div>
-        </div>
-
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        
-        <!-- Contact Javascript File -->
-        <script src="mail/jqBootstrapValidation.min.js"></script>
-        <script src="mail/contact.js"></script>
-
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    <!-- Core Scripts -->
+    <script src="js/main.js"></script>
+</body>
 </html>
